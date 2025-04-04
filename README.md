@@ -1,1 +1,1 @@
-# MYCELIUM_threat_detection_model.py
+# MYCELIUM SYSTEMS Threat Detection Model
