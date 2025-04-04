@@ -1,0 +1,38 @@
+graph TD
+    A[Threat Data Sources] -->|APIs/Feeds| B[Data Ingestion Layer]
+    B -->|Normalization| C[Threat Intelligence Core]
+    C --> D[Automated Analysis Engine]
+    D --> E[Integration Layer]
+    E --> F[SOC Tools]
+    C --> G[Reporting & Alerts]
+
+    subgraph Data Sources
+        A1[OSINT Feeds] --> B
+        A2[Dark Web Crawlers] --> B
+        A3[Commercial APIs] --> B
+        A4[Internal Logs (Wazuh, SIEM)] --> B
+    end
+
+    subgraph Threat Intelligence Core
+        C1[Elasticsearch DB] --> D
+        C2[PostgreSQL (Metadata)] --> D
+    end
+
+    subgraph Automated Analysis
+        D1[Machine Learning Models] -->|Anomaly Detection| E
+        D2[NLP for IOC Extraction] --> E
+        D3[Correlation Engine] --> E
+    end
+
+    subgraph Integrations
+        E --> F1[WAZUH]
+        E --> F2[Grafana Dashboards]
+        E --> F3[SIEM (Splunk, QRadar)]
+        E --> F4[EDR (CrowdStrike)]
+    end
+
+    subgraph User Outputs
+        G --> G1[Real-time Alerts (Email/SMS)]
+        G --> G2[Custom Reports (PDF/Excel)]
+        G --> G3[Threat Actor Profiles]
+    end
