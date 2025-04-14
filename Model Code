@@ -32,3 +32,18 @@ except Exception as e:
   logger.ERROR(f"Failed to initialize STIX/TAXII connection: {e}")
   self.ioc_parser = None
 
+# Training Method
+def train(self, historical_data)
+
+
+
+
+
+
+
+
+
+
+
+
+
